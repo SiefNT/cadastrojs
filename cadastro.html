@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    
+
+    <style>
+        * {
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            background-color: #2B0246;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo-imagem {
+            width: 50px;
+            height: 50px;
+            background-color: #FEBA3F;
+            border-radius: 25px;
+        }
+
+        .container-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li a{
+            color: #FEBA3F;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .logo-texto li a{
+            color: #FEBA3F;
+            text-align: center;
+            text-decoration: none;
+        }
+        .logo-texto{
+            color: #FEBA3F;
+            margin-left: 20px;
+        }
+        .fundo {
+            background-image: linear-gradient(45deg, rgb(113, 101, 122), rgb(128, 31, 167));
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(241, 238, 231);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(43, 2, 70, 0.3);
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            background-color: #4f0879;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #6410a5;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <div class="logo-imagem"></div>
+            <div class="logo-texto">
+                <ul>
+                    <li>
+                        <a href="#"><h3>___</h3></a>
+                    </li>
+                    <li>
+                        <a href="#"><h3>___</h3></a>
+                    </li>
+                    <li>
+                        <a href="#"><h3>___</h3></a>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#">Entrar | Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </header>
+    <div class="fundo">
+        <h1><b>BEM VINDO A PÁGINA DE CADASTRO DO LIFESTYLE APP</b></h1>
+        <br>
+        <br>
+        <div class="container">
+            <h2>Cadastro</h2>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name">
+          
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+          
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password">
+          
+                <input type="submit" value="Enviar" onclick="salvarDados()">
+              </form>
+        </div>
+    </div>
+    <script>
+        function salvarDados() {
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("password").value;
+  
+          let dados = JSON.parse(localStorage.getItem("dados")) || [];
+  
+          dados.push({name: name, email: email, password: password});
+  
+          localStorage.setItem("dados", JSON.stringify(dados));
+  
+          alert("Dados salvos com sucesso!");
+        }
+      </script>
+
+
+
+</body>
+
+</html>
