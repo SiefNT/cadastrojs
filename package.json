@@ -1,0 +1,28 @@
+{
+  "name": "cadastro",
+  "version": "1.0.0",
+  "description": "o objetivo é fazer uma tela de cadastro que armazene os dados em mongodb",
+  "main": "cadastro.js",
+  "scripts": {
+    "start": "node cadastro.js",
+    "test": "cadastro.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiefNT/cadastrojs.git"
+  },
+  "keywords": [
+    "cadastrojs"
+  ],
+  "author": "gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiefNT/cadastrojs/issues"
+  },
+  "homepage": "https://github.com/SiefNT/cadastrojs#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.1"
+  }
+}
