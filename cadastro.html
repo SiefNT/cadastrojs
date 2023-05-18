@@ -164,29 +164,38 @@
     </div>
     <script>
         function salvarDados() {
+          //Obtém os valores inseridos nos campos de nome, email e senha usando:
           let name = document.getElementById("name").value;
           let email = document.getElementById("email").value;
           let password = document.getElementById("password").value;
-  
+          //Verifica se há algum dado armazenado no localStorage com a chave "dados". Caso não haja, cria um array vazio.
           let dados = JSON.parse(localStorage.getItem("dados")) || [];
-  
+          //Adiciona um novo objeto contendo as informações do usuário ao array.
           dados.push({name: name, email: email, password: password});
-  
+          //Atualiza o localStorage com o novo array convertido em uma string JSON usando 
           localStorage.setItem("dados", JSON.stringify(dados));
   
           alert("Dados salvos com sucesso!");
         }
       </script>
+    
     <ul id="lista-dados"></ul>
+    
     <script>let dados = JSON.parse(localStorage.getItem("dados")) || [];
-
-        let listaDados = document.getElementById("lista-dados");
-        
-        for (let i = 0; i < dados.length; i++) {
-          let item = document.createElement("li");
-          item.textContent = "Nome: " + dados[i].name + ", Email: " + dados[i].email + ", Senha: " + dados[i].password;
-          listaDados.appendChild(item);
-        }
+    //Primeiro, ele obtém os dados armazenados no localStorage da mesma forma que na função salvarDados(), convertendo-os em um array vazio caso não haja dados.
+    //Em seguida, obtém a referência do elemento ul com o id "lista-dados" usando:
+    let listaDados = document.getElementById("lista-dados");
+    //Utilizando um loop for, itera sobre os dados obtidos.    
+    for (let i = 0; i < dados.length; i++) {
+        //Para cada objeto de dado, cria um novo elemento li usando 
+        let item = document.createElement("li");
+        //Define o conteúdo de texto do elemento li com as informações do usuário.
+        item.textContent = "Nome: " + dados[i].name + ", Email: " + dados[i].email + ", Senha: " + dados[i].password;
+        //Adiciona o elemento li à lista usando appendChild
+        listaDados.appendChild(item);
+        /*é responsável por adicionar o elemento li à lista representada pelo elemento com o id "lista-dados".
+         O método appendChild() é utilizado para adicionar a variável filho(item) a uma variavel pai existente(listaDados).*/  
+    }
      </script>
 
 
